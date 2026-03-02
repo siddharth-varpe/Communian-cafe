@@ -1,0 +1,52 @@
+.location-section {
+    background-color: var(--bg-color);
+}
+
+.location-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+}
+
+.map-container {
+    height: 300px;
+    width: 100%;
+}
+
+.location-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.address-block h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.address-text {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .location-card {
+        flex-direction: row;
+    }
+
+    .map-container {
+        flex: 2;
+        height: 400px;
+    }
+
+    .location-info {
+        flex: 1;
+        padding: 40px;
+    }
+}

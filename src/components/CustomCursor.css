@@ -1,0 +1,13 @@
+.pixel-trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    /* Let all clicks pass through to UI underneath */
+    z-index: 9999;
+}
+
+/* We want to show the default cursor, so we simply let the browser handle it.
+   The canvas sits behind pointer events anyway */

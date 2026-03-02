@@ -1,0 +1,133 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition);
+    background-color: transparent;
+    padding: 24px 0;
+}
+
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    padding: 16px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-olive);
+    letter-spacing: -0.5px;
+}
+
+.desktop-nav {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent-olive);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cta-btn {
+    display: none;
+}
+
+.mobile-toggle {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: var(--shadow-md);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-nav.open {
+    max-height: 400px;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobile-nav-links a:not(.btn) {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.mt-4 {
+    margin-top: 16px;
+}
+
+@media (min-width: 900px) {
+    .desktop-nav {
+        display: block;
+    }
+
+    .cta-btn {
+        display: inline-flex;
+    }
+
+    .mobile-toggle {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: none !important;
+    }
+}
