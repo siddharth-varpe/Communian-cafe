@@ -10,8 +10,8 @@ const Hero = () => {
             <div className="container hero-container">
                 <div className="hero-content">
                     <div className="hero-badge">
-                        <span className="rating"><Star size={16} fill="currentColor" /> 4.4</span>
-                        <span className="reviews">138+ Google Reviews</span>
+                        <span className="rating" style={{ color: '#b45309' }}><Star size={16} fill="currentColor" /> 4.4</span>
+                        <span className="reviews" style={{ color: 'var(--text-secondary)' }}>138+ Google Reviews</span>
                     </div>
 
                     <h1 className="hero-title">

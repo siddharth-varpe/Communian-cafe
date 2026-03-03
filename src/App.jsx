@@ -15,12 +15,14 @@ function App() {
     <div className="app">
       <CustomCursor />
       <Header />
-      <Hero />
-      <WhyChooseUs />
-      <SignatureDishes />
-      <Reviews />
-      <Reservation />
-      <Location />
+      <main>
+        <Hero />
+        <WhyChooseUs />
+        <SignatureDishes />
+        <Reviews />
+        <Reservation />
+        <Location />
+      </main>
       <Footer />
       <FloatingWhatsApp />
     </div>
