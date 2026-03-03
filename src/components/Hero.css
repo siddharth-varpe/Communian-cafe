@@ -7,10 +7,10 @@
     align-items: center;
     overflow: hidden;
     background-color: var(--bg-color);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1447&ixlib=rb-4.0.3');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1447&ixlib=rb-4.0.3');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    /* Remove background-attachment: fixed on mobile as it causes scrolling lag/jumping on iOS/mobile browsers */
 }
 
 .hero-background {
@@ -73,12 +73,12 @@
     line-height: 1.1;
     margin-bottom: 24px;
     letter-spacing: -1px;
-    color: var(--white);
+    color: var(--text-primary);
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
     margin-bottom: 32px;
     max-width: 540px;
 }
@@ -94,7 +94,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
     font-size: 1rem;
 }
 
