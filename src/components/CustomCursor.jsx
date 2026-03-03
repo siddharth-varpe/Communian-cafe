@@ -5,6 +5,10 @@ const CustomCursor = () => {
     const canvasRef = useRef(null);
 
     useEffect(() => {
+        // Performance Fix: Disable entirely on touch devices
+        const isTouchDevice = !window.matchMedia('(pointer: fine)').matches;
+        if (isTouchDevice) return;
+
         const canvas = canvasRef.current;
         if (!canvas) return;
 
@@ -112,6 +116,13 @@ const CustomCursor = () => {
             cancelAnimationFrame(animationFrameId);
         };
     }, []);
+
+    // Performance Fix: Do not render canvas element at all on touch devices
+    const isTouchDevice = typeof window !== 'undefined' ? !window.matchMedia('(pointer: fine)').matches : false;
+
+    if (isTouchDevice) {
+        return null;
+    }
 
     return (
         <canvas
