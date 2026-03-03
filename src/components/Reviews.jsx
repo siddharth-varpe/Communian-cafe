@@ -26,14 +26,23 @@ const Reviews = () => {
             <div className="container">
                 <div className="reviews-header text-center">
                     <h2 className="section-title">Loved by our Guests</h2>
-                    <div className="google-rating">
-                        <span className="rating-number">4.4</span>
-                        <div className="stars">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} size={20} fill={i < 4 ? "#f59e0b" : "transparent"} color="#f59e0b" />
-                            ))}
+                    <div className="live-google-rating-container" style={{ display: 'flex', justifyContent: 'center', margin: '20px 0', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+                        <div style={{ borderRadius: '12px', overflow: 'hidden', width: '100%', maxWidth: '400px', height: '140px', boxShadow: 'var(--shadow-md)', border: '1px solid var(--border-light)' }}>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1!2d73.9130709!3d18.6199324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c7fd42cb3dc1%3A0x5c7e0283bf1c7234!2sCommunion%20Cafe%20Pune!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                                width="100%"
+                                height="250px"
+                                style={{ border: 0, marginTop: '-10px' }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="Live Google Rating"
+                            ></iframe>
                         </div>
-                        <span className="review-count">Based on 138+ Google Reviews</span>
+                        <a href="https://www.google.com/maps/place/Communion+Cafe+Pune/@18.6199324,73.9130709,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2c7fd42cb3dc1:0x5c7e0283bf1c7234!8m2!3d18.6199324!4d73.9130709!16s%2Fg%2F11vrckxpdp" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                            <Star size={18} fill="#f59e0b" color="#f59e0b" />
+                            Read All Google Reviews
+                        </a>
                     </div>
                 </div>
 

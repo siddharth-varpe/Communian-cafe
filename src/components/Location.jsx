@@ -15,7 +15,7 @@ const Location = () => {
                     <div className="map-container">
                         {/* Using a placeholder iframe for the map. For a real location, the Google Maps embed code goes here */}
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.9576404285874!2d73.92383861502444!3d18.62100868735075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c12b7754eb27%3A0x6bba3a6a12b4ba!2sD.%20Y.%20Patil%20Knowledge%20City!5e0!3m2!1sen!2sin!4v1695460593452!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.083!2d73.9130709!3d18.6199324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c7fd42cb3dc1%3A0x5c7e0283bf1c7234!2sCommunion%20Cafe%20Pune!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
@@ -39,7 +39,7 @@ const Location = () => {
                         </div>
 
                         <a
-                            href="https://maps.google.com/?q=Communion+Cafe+DY+Patil+Knowledge+City+Pune"
+                            href="https://www.google.com/maps/place/Communion+Cafe+Pune/@18.6199324,73.9130709,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2c7fd42cb3dc1:0x5c7e0283bf1c7234!8m2!3d18.6199324!4d73.9130709!16s%2Fg%2F11vrckxpdp"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-primary full-width mt-4"

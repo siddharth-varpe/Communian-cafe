@@ -23,7 +23,7 @@
 
 .hero-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 60px;
     position: relative;
     z-index: 1;
@@ -141,6 +141,7 @@
 
 .pulse-animation {
     animation: pulse 2s infinite;
+    transform: translateY(-10px);
 }
 
 @keyframes pulse {
