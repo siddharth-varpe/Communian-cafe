@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import WhyChooseUs from './components/WhyChooseUs';
-import SignatureDishes from './components/SignatureDishes';
-import Reviews from './components/Reviews';
-import Reservation from './components/Reservation';
-import Location from './components/Location';
-import Footer from './components/Footer';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
 import CustomCursor from './components/CustomCursor';
+
+// Lazy load below-the-fold components to slash the initial JS bundle size and vastly improve FCP/LCP
+const WhyChooseUs = React.lazy(() => import('./components/WhyChooseUs'));
+const SignatureDishes = React.lazy(() => import('./components/SignatureDishes'));
+const Reviews = React.lazy(() => import('./components/Reviews'));
+const Reservation = React.lazy(() => import('./components/Reservation'));
+const Location = React.lazy(() => import('./components/Location'));
+const Footer = React.lazy(() => import('./components/Footer'));
+const FloatingWhatsApp = React.lazy(() => import('./components/FloatingWhatsApp'));
 
 function App() {
   return (
@@ -17,14 +19,18 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <WhyChooseUs />
-        <SignatureDishes />
-        <Reviews />
-        <Reservation />
-        <Location />
+        <Suspense fallback={<div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</div>}>
+          <WhyChooseUs />
+          <SignatureDishes />
+          <Reviews />
+          <Reservation />
+          <Location />
+        </Suspense>
       </main>
-      <Footer />
-      <FloatingWhatsApp />
+      <Suspense fallback={null}>
+        <Footer />
+        <FloatingWhatsApp />
+      </Suspense>
     </div>
   );
 }
