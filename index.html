@@ -33,6 +33,16 @@
   <link rel="dns-prefetch" href="https://www.google.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
+  <!-- Preload fonts to avoid CSS Import render-blocking -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  </noscript>
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="restaurant.cafe" />
   <meta property="og:url" content="https://communian-cafe-8619d.web.app/" />

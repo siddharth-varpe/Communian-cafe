@@ -12,12 +12,14 @@ const CustomCursor = () => {
 
         // Set canvas to full screen
         const resizeCanvas = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            requestAnimationFrame(() => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
         };
 
         resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', resizeCanvas, { passive: true });
 
         let particles = [];
         const maxParticles = 80;
