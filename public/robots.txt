@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://communian-cafe-8619d.web.app/sitemap.xml
