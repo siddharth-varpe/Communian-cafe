@@ -36,6 +36,7 @@
 .hero-content {
     flex: 1;
     max-width: 650px;
+    padding-top: 20px;
 }
 
 .hero-badge {

@@ -6,17 +6,29 @@ const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            const currentScrollY = window.scrollY;
+            setIsScrolled(currentScrollY > 50);
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                setIsVisible(false); // Hide on scroll down
+            } else {
+                setIsVisible(true);  // Show on scroll up
+            }
+
+            setLastScrollY(currentScrollY);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [lastScrollY]);
 
     return (
-        <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <header className={`header ${isScrolled ? 'scrolled' : ''} ${!isVisible ? 'hidden' : ''}`}>
             <div className="container header-content">
                 <a href="#" className="logo">
                     <span className="logo-text">Communion Cafe</span>
